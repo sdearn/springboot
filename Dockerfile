@@ -1,12 +1,7 @@
-FROM java:7
+FROM openjdk:8-jdk-alpine
 
-MAINTAINER sdearn<540797670@qq.com>
+VOLUME /tmp
 
 ADD file/ work/
 
-
-RUN ["chmod", "+x", "/work/docker-entrypoint.sh"]
-
-EXPOSE 8080
-
-ENTRYPOINT ["/work/docker-entrypoint.sh"]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/cscec-pay.jar"]
