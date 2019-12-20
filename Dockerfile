@@ -1,7 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-VOLUME /tmp
+MAINTAINER sdearn<540797670@qq.com>
 
-ADD file/ work/
 
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/cscec-pay.jar"]
+EXPOSE 8080
